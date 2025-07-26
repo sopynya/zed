@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prosto+One&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin:0;
+                padding: 0;
+                background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url(Zed_0.jpeg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                scroll-behavior: smooth;
+                font-family: 'Public Sans', sans-serif;
+                overflow-x: hidden;
+            }
+            
+            /* Cool particle effect overlay */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 20% 80%, rgba(203, 93, 15, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(225, 144, 100, 0.1) 0%, transparent 50%);
+                pointer-events: none;
+                z-index: 1;
+            }
+            h1 {
+                font-family: 'Prosto One', sans-serif;
+                color: rgb(203, 93, 15);
+                margin: 0 0 0 100px;
+                font-size: 6.5em;
+                text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(203, 93, 15, 0.4);
+                letter-spacing: 2px;
+                font-weight: 900;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+            
+            @keyframes glow {
+                from {
+                    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(203, 93, 15, 0.4);
+                }
+                to {
+                    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8), 0 0 30px rgba(100, 0, 0, 0.8), 0 0 40px rgba(203, 93, 15, 0.6);
+                }
+            }
+            header{
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 0, 0, 0.9));
+                padding: 18px;
+                backdrop-filter: blur(10px);
+                border-bottom: 2px solid rgba(203, 93, 15, 0.3);
+                position: relative;
+                z-index: 10;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+            
+            header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, transparent, rgba(203, 93, 15, 0.1), transparent);
+                animation: header-shine 3s ease-in-out infinite;
+            }
+            
+            @keyframes header-shine {
+                0%, 100% { transform: translateX(-100%); }
+                50% { transform: translateX(100%); }
+            }
+            a {
+                color: white;
+                font-family: 'Public Sans', sans-serif;
+                text-decoration: none;
+                margin: 20px;
+                position: relative;
+                transition: all 0.3s ease;
+                padding: 8px 16px;
+                border-radius: 4px;
+                background: linear-gradient(45deg, transparent, rgba(203, 93, 15, 0.1), transparent);
+            }
+            
+            a:hover {
+                color: rgb(203, 93, 15);
+                text-shadow: 0 0 10px rgba(203, 93, 15, 0.5);
+                transform: translateY(-2px);
+                background: linear-gradient(45deg, rgba(203, 93, 15, 0.2), rgba(225, 144, 100, 0.1), rgba(203, 93, 15, 0.2));
+                box-shadow: 0 4px 15px rgba(203, 93, 15, 0.3);
+            }
+            
+            
+            
+            a:hover::before {
+                left: 100%;
+            }
+            #section1 {
+                padding: 0 0 40px 0;
+                margin: 500px 0 0 0;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0), black);
+                position: relative;
+                z-index: 2;
+            }
+            
+            #section1::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                pointer-events: none;
+            }
+            #container0 {
+                margin: 0 auto;
+            }
+            h2 {
+                font-family: 'Sansation', sans-serif;
+                color: rgb(225, 144, 100);
+                margin: 0 0 0 50px;
+                font-size: 2.5em;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(225, 144, 100, 0.3);
+                letter-spacing: 1px;
+                font-weight: 700;
+                animation: subtitle-glow 3s ease-in-out infinite alternate;
+            }
+            
+            @keyframes subtitle-glow {
+                from {
+                    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(225, 144, 100, 0.3);
+                }
+                to {
+                    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), 0 0 25px rgba(225, 144, 100, 0.6), 0 0 35px rgba(225, 144, 100, 0.4);
+                }
+            }
+            #section2 {
+                background: linear-gradient(to bottom, black, rgb(19, 0, 0));
+                margin: 0;
+                padding: 100px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            #section2::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: 
+                    radial-gradient(circle at 30% 20%, rgba(203, 93, 15, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 80%, rgba(225, 144, 100, 0.05) 0%, transparent 50%);
+                animation: section2-pulse 4s ease-in-out infinite;
+            }
+            
+            @keyframes section2-pulse {
+                0%, 100% { opacity: 0.3; }
+                50% { opacity: 0.8; }
+            }
+            p {
+                color: white;
+                font-family: 'Public Sans', sans-serif;
+                font-size: 1.25em;
+                line-height: 1.8;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                position: relative;
+                z-index: 3;
+            }
+            
+            p::first-letter {
+                font-size: 1.2em;
+                color: rgb(203, 93, 15);
+                font-weight: bold;
+            }
+            #section3 {
+                margin: 0;
+                padding: 100px;
+                background: linear-gradient(to bottom, rgb(19, 0, 0), black);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            #section3::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(203, 93, 15, 0.03) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(225, 144, 100, 0.03) 0%, transparent 40%);
+                animation: section3-float 6s ease-in-out infinite;
+            }
+            
+            @keyframes section3-float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            .sidebyside {
+                display: flex;
+                flex-direction: row;
+            }
+            .column {
+                flex-direction: column;
+            }
+            h3 {
+                font-family: 'Sansation', sans-serif;
+                font-size: 3.6em;
+                color: white;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(203, 93, 15, 0.3);
+                position: relative;
+                z-index: 3;
+                margin-bottom: 30px;
+            }
+            
+            h3::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100px;
+                height: 3px;
+                background: linear-gradient(90deg, rgb(203, 93, 15), rgb(225, 144, 100));
+                border-radius: 2px;
+            }
+            h4 {
+                font-family: 'Sansation', sans-serif;
+                font-size: 2.6em;
+                color: white;
+                margin-bottom: 20px;
+                text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(225, 144, 100, 0.2);
+                position: relative;
+                z-index: 3;
+                border-left: 4px solid rgb(203, 93, 15);
+                padding-left: 15px;
+            }
+            #img1 {
+                width: 450px;
+                max-height: fit-content;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(203, 93, 15, 0.2);
+                transition: all 0.3s ease;
+                filter: brightness(0.9) contrast(1.1);
+            }
+            
+            #img1:hover {
+                transform: scale(1.02) translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(203, 93, 15, 0.4);
+                filter: brightness(1) contrast(1.2);
+            }
+            @media (max-width: 1200px) {
+                .sidebyside {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header id="header">
+            <div id="container0">
+                <a href="#header">Menu</a>
+                <a href="#section2">História</a>
+                <a href="#section3">Habilidades</a>
+            </div>
+        </header>
+
+        <section id="section1">
+            <h1>ZED</h1>
+            <h2>O mestre das sombras</h2>
+        </section>
+
+        <section id="section2">
+            <h3>História</h3>
+            <p>
+                Zed é um assassino implacável e mestre das sombras no universo de League of Legends. 
+                Nascido em Ionia, ele foi acolhido ainda jovem pelo grande monastério da Ordem Kinkou, 
+                uma organização dedicada ao equilíbrio espiritual e físico. Lá, ele cresceu ao lado de Shen, 
+                filho do mestre Kusho, e se tornou um dos mais habilidosos discípulos da ordem.<br><br>
+                Ao longo dos anos, Zed começou a se sentir frustrado com os princípios da Kinkou, 
+                que pregavam equilíbrio e harmonia mesmo diante da injustiça e da guerra. 
+                Quando Ionia foi invadida por forças externas (como os de Noxus), ele acreditava que 
+                a passividade da ordem era uma fraqueza imperdoável.<br>
+                Em busca de poder para proteger sua terra natal a qualquer custo, 
+                Zed descobriu uma antiga e proibida forma de magia das sombras selada no templo da Kinkou. 
+                Ao abrir o selo, ele se uniu às sombras, ganhando habilidades mortais, mas também sendo 
+                corrompido por esse novo poder.<br><br>
+                Transformado, Zed confrontou seu antigo mestre Kusho e o matou, 
+                tomando o controle da Ordem Kinkou e criando uma nova seita: a Ordem das Sombras. 
+                Essa nova organização rejeita o equilíbrio e prega que a força e a vitória justificam qualquer meio. 
+                Agora, como líder, Zed treina outros guerreiros para usar as sombras como arma e eliminar todos os que 
+                ameaçam Ionia inclusive os antigos aliados.<br><br>
+                Zed vive em constante conflito com Shen, seu antigo irmão de treino, 
+                que agora tenta restaurar a verdadeira Kinkou e deter o avanço das trevas espalhadas pela 
+                Ordem das Sombras. Essa rivalidade simboliza o embate entre equilíbrio e poder absoluto, luz e trevas, 
+                honra e pragmatismo.
+            </p>
+        </section>
+
+        <section id="section3">
+            <div class="sidebyside">
+                <div class="column">
+                    <h3>Jogabilidade</h3>
+                    <p>
+                        Zed é um assassino de energia da rota do meio, conhecido por sua alta mobilidade, 
+                        burst de dano e capacidade de eliminar alvos frágeis rapidamente. Ele é um campeão difícil de dominar, 
+                        mas extremamente recompensador quando bem jogado. A jogabilidade de Zed gira em torno de suas sombra(s), 
+                        que lhe permitem reposicionamento, outplays e combos mortais.<br><br><br>
+                    </p>
+                    <h4>Passiva - Desprezo pelos Fracos</h4>
+                    <p>
+                        Zed causa dano mágico bônus a inimigos com menos de 50% de vida. 
+                        Esse efeito tem um tempo de recarga por inimigo, o que o torna ótimo para executar 
+                        adversários e empurrar rotas rapidamente.
+                    </p>
+                    <h4>Q - Shuriken Laminado</h4>
+                    <p>
+                        Zed lança uma shuriken à frente, causando dano a todos os inimigos atravessados.<br>
+                        Se houver sombras ativas, elas também lançam uma shuriken na mesma direção.<br>
+                        - Dano é reduzido após atingir o primeiro inimigo.<br>
+                        - É a principal fonte de poke e waveclear de Zed. <br>
+                        - Pode acertar múltiplos alvos com sombras, causando burst massivo. 
+                    </p>
+                    <h4>W - Sombra Viva</h4>
+                    <p>
+                        Zed conjura uma sombra à frente por alguns segundos. 
+                        Reativando a habilidade, ele pode trocar de lugar com ela.<br>
+                        - A sombra imita Q e E, permitindo executar combos à distância. <br>
+                        - É usada para iniciar trocas, escapar de emboscadas ou reposicionar agressivamente. <br>
+                        - Recupera parte da energia se Zed e a sombra acertarem o mesmo inimigo com habilidades.
+                    </p>
+                    <h4>E - Corte Sombrio</h4>
+                    <p>
+                        Zed faz um corte circular ao seu redor, causando dano em área.<br>
+                        As sombras também executam essa habilidade.<br>
+                        - Inimigos atingidos têm a velocidade de movimento reduzida. <br>
+                        - É importante para aplicar controle de grupo e para dano em combates corpo a corpo.
+                    </p>
+                    <h4>R – Marca Fatal</h4>
+                    <p>
+                        Zed fica inalvejável por 0,75s e teleporta atrás do campeão inimigo-alvo, 
+                        aplicando uma marca que explode após alguns segundos, causando dano com base no dano causado durante a marca.<br>
+                        - Cria uma sombra no ponto de conjuração que pode ser usada para retornar com segurança.<br>
+                        - Excelente para eliminar carregadores frágeis em um piscar de olhos. <br>
+                        - Também permite reposicionamentos e outplays incríveis.<br>
+                    </p>
+                    <br><br><br><br>
+                    <h4>Fase de Rotas</h4>
+                    <p>
+                        Zed é um laner agressivo. Usa sua sombra W + Q para dar poke seguro.<br>
+                        Com W + E, ele também pode farmar e pressionar sem se expor.<br><br>
+                        Sua pressão no mapa é muito forte após o nível 6.
+                    </p>
+                    <br><br>
+                    <h4>Fraquezas</h4>
+                    <p>
+                        Zed fraquezas: <br>
+                        - Vulnerável a controle de grupo se for pego fora das sombras.<br>
+                        - Requer tempo de recarga para brilhar.<br>
+                        - Campeões tanques ou com muita resistência mágica podem neutralizar seu dano.
+                    </p>
+                </div>
+                <img id="img1" src="zed.webp">
+            </div>
+        </section>
+        
+        <script>
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
